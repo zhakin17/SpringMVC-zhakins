@@ -24,8 +24,12 @@ public class ProductService implements IProductService {
 	
 	@Override
 	public boolean insProduct(Product product) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		String sql="INSERT into \"D_PRODUCT\"(\"NAME\", \"DESCRIPTION\" ) values (?,?)";
+		
+		int row =jdbcTemplate.update(sql, new Object[]{product.getName(),product.getDescription()});
+		
+		return (row !=0) ? true:false;
 	}
 
 	@Override

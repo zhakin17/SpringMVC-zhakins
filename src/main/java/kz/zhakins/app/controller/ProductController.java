@@ -41,10 +41,10 @@ public class ProductController {
 	
 	@RequestMapping(value="/add", method=RequestMethod.POST)
 	public String insProduct(@ModelAttribute ("productAttribute") Product product, Model model){
-		/*
+		
 		if (productService.insProduct(product)) {
 			model.addAttribute("productAttribute", new Product());
-		}*/
+		}
 		return "/jsp/insPage";
 	}
 }
